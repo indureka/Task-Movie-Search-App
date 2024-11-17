@@ -27,8 +27,6 @@ const MovieGrid = () => {
 
   const totalPages = totalResults > 0 ? Math.ceil(totalResults / 10) : 1;
 
-  console.log("Total Results:", totalResults);
-  console.log("Calculated Total Pages:", totalPages);
 
   return (
     <div className="p-4">

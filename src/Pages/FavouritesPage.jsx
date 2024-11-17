@@ -9,7 +9,7 @@ const FavoritesPage = () => {
 
   // Log favorites whenever it updates
   useEffect(() => {
-    console.log("Updated Favorites in FavoritesPage:", favorites);
+    console.log("Updated Favorites in FavoritesPage:");
   }, [favorites]); // Dependency array to trigger useEffect on `favorites` change
 
   return (

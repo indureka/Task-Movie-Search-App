@@ -1,14 +1,14 @@
 
 
 const API_URL = 'https://www.omdbapi.com/';
-const API_KEY = "19f869f7"; // Replace with your OMDB API key
+export const API_KEY = "19f869f7"; // Replace with your OMDB API key
 
 console.log(API_KEY);
 
 // Function to fetch movies based on search term and page
 export const fetchMovies = async (searchTerm, page = 1) => {
   const url = `${API_URL}?s=${searchTerm}&page=${page}&apikey=${API_KEY}`;
-  console.log('Fetching movies with URL:', url);
+  console.log('Fetching movies with URL:');
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -26,7 +26,7 @@ export const fetchMovies = async (searchTerm, page = 1) => {
 // Function to fetch detailed information for a specific movie
 export const fetchMovieDetails = async (imdbID) => {
   const url = `${API_URL}?i=${imdbID}&apikey=${API_KEY}`;
-  console.log('Fetching movie details with URL:', url);  // Debugging the URL
+  console.log('Fetching movie details with URL:');  // Debugging the URL
   try {
     const response = await fetch(url);
     const data = await response.json();

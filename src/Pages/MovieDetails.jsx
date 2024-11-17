@@ -8,9 +8,7 @@ const MovieDetails = () => {
   const navigate = useNavigate(); // For navigation (e.g., back to home page)
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
-// Get the movie ID from the URL
-    console.log('Extracted imdbID from URL:', imdbID);
-    console.log('useParams output:', useParams()); 
+
 
   useEffect(() => {
 
@@ -21,7 +19,7 @@ const MovieDetails = () => {
       }
 
     const getMovieDetails = async () => {
-        console.log('Fetching movie details for ID:', imdbID); // Debug
+        console.log('Fetching movie details for ID:'); // Debug
       try {
         const data = await fetchMovieDetails(imdbID);
         setMovie(data);

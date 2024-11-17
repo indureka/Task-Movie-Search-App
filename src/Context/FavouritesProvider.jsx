@@ -12,15 +12,17 @@ const FavoritesProvider = ({ children }) => {
     }
   };
 
-  // Remove movie from favorites
   const removeFromFavorites = (movieID) => {
     setFavorites((prevFavorites) => {
-      const updatedFavorites = prevFavorites.filter(
-        (movie) => movie.imdbID !== movieID
-      );
-      console.log("Removing movie with ID:", movieID);
-      console.log("Updated Favorites in Provider:", updatedFavorites);
-      return [...updatedFavorites];
+      const updatedFavorites = [];
+      for (let i = 0; i < prevFavorites.length; i++) {
+        if (prevFavorites[i].imdbID !== movieID) {
+          updatedFavorites.push(prevFavorites[i]); // Add to updatedFavorites if it's not the movie to remove
+        }
+      }
+      console.log("Removing movie with ID:");
+      console.log("Updated Favorites in Provider:");
+      return updatedFavorites; // Return the updated array
     });
   };
 
